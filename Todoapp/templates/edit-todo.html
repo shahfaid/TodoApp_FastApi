@@ -1,0 +1,62 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mt-4">
+                <div class="card-header border-0 pt-4 pb-0">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Edit Task</h4>
+                        <span class="badge badge-light">ID: {{todo.id}}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form id="editTodoForm">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" value="{{todo.title}}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" class="form-control" rows="3" required>{{todo.description}}</textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Priority</label>
+                                <select name="priority" class="form-control">
+                                    <option {% if todo.priority == 1 %} selected="selected" {% endif %}>1</option>
+                                    <option {% if todo.priority == 2 %} selected="selected" {% endif %}>2</option>
+                                    <option {% if todo.priority == 3 %} selected="selected" {% endif %}>3</option>
+                                    <option {% if todo.priority == 4 %} selected="selected" {% endif %}>4</option>
+                                    <option {% if todo.priority == 5 %} selected="selected" {% endif %}>5</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-md-6 d-flex align-items-end">
+                                <div class="custom-control custom-switch mb-2 ml-2">
+                                    <input type="checkbox" class="custom-control-input" id="completeSwitch" name="complete" {% if todo.complete %} checked {% endif %}>
+                                    <label class="custom-control-label font-weight-bold" for="completeSwitch">Mark as Complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                             <button id="deleteButton" type="button" class="btn btn-outline-danger btn-sm">
+                                <i class="fas fa-trash-alt mr-1"></i> Delete
+                            </button>
+                            
+                            <div>
+                                <a href="/todos/todo-page" class="btn btn-link text-muted mr-2">Cancel</a>
+                                <button type="submit" class="btn btn-primary px-4">Update Todo</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

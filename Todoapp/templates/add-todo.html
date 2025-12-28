@@ -1,0 +1,43 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mt-4">
+                <div class="card-header text-center border-0 pt-4">
+                    <h3>New Task</h3>
+                    <p class="text-muted small mb-0">What needs to be done?</p>
+                </div>
+                <div class="card-body">
+                    <form id="todoForm">
+                        <div class="form-group">
+                            <label><i class="fas fa-heading mr-2"></i>Title</label>
+                            <input type="text" class="form-control" name="title" placeholder="e.g. Buy Groceries" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-align-left mr-2"></i>Description</label>
+                            <textarea class="form-control" rows="3" name="description" placeholder="Details about the task..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-flag mr-2"></i>Priority (1 = Highest)</label>
+                            <select class="form-control custom-select" name="priority">
+                                <option value="1">1 - Critical</option>
+                                <option value="2">2 - High</option>
+                                <option value="3" selected>3 - Medium</option>
+                                <option value="4">4 - Low</option>
+                                <option value="5">5 - Trivial</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="/todos/todo-page" class="btn btn-link text-muted" style="text-decoration: none;">Cancel</a>
+                            <button type="submit" class="btn btn-primary px-5 shadow">Save Task</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

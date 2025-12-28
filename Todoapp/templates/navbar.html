@@ -1,0 +1,33 @@
+<div>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-check-double mr-2"></i>TodoApp
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath stroke=\'rgba(0, 0, 0, 0.5)\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' d=\'M4 7h22M4 15h22M4 23h22\'/%3E%3C/svg%3E');"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    {% if user %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/todos/todo-page">Dashboard</a>
+                    </li>
+                     {% endif %}
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if user %}
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center">
+                            <span class="text-muted mr-3 small d-none d-md-block">Welcome, {{ user.username }}</span>
+                            <a type="button" class="btn btn-outline-light btn-sm" onclick="logout()">
+                                <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
